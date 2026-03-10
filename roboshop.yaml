@@ -16,7 +16,7 @@
         image_id: "{{ ami_id }}"
         region: us-east-1
         security_groups: "{{ sg_id }}"
-        vpc_subnet_id: "{{ vpc_id }}"
+        vpc_security_group_ids: "{{ vpc_id }}"
         name: "{{ item }}-{{ env }}"
         tags:
           Project: "roboshop"
