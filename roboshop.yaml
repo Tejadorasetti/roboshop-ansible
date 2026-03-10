@@ -5,15 +5,19 @@
     sg_id: "sg-07de29797df730215"
     ami_id: "ami-0220d79f3f480ecf5"
     env: "dev"
+    region: "us-east-1"
+    az: "us-east-1a"
     instances:
-     - mangodb
-     - catalogue
+      - mangodb
+      - catalogue
+
   tasks:
     - name: create ec2 instance
       amazon.aws.ec2_instance:
         instance_type: t3.micro
         image_id: "{{ ami_id }}"
-        region: us-east-1a
+        region: "{{ region }}"
+        availability_zone: "{{ az }}"
         security_groups: "{{ sg_id }}"
         name: "{{ item }}-{{ env }}"
         tags:
@@ -26,4 +30,4 @@
 
     - name: print the ec2_output
       ansible.builtin.debug:
-        msg: "{{ ec2_output }}"  
+        var: ec2_output
