@@ -4,6 +4,7 @@
   vars:
     sg_id: "sg-07de29797df730215"
     ami_id: "ami-0220d79f3f480ecf5"
+    vpc_id: "vpc-0c6eb3aa23dcd5669"
     env: "dev"
     instances:
      - mangodb
@@ -15,6 +16,7 @@
         image_id: "{{ ami_id }}"
         region: us-east-1
         security_groups: "{{ sg_id }}"
+        vpc_subnet_id: "{{ vpc_id }}"
         name: "{{ item }}-{{ env }}"
         tags:
           Project: "roboshop"
