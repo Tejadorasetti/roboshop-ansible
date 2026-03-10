@@ -2,7 +2,7 @@
   hosts: all
   connection: local
   vars:
-    sg_id: "sg-07de29797df730215"
+    sg_id: "sgr-0b65999c424eccac7"
     ami_id: "ami-0220d79f3f480ecf5"
     env: "dev"
     instances:
