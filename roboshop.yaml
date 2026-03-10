@@ -4,7 +4,7 @@
   vars:
     sg_id: sg-0b5ce78bce9e14397
     ami_id: ami-0220d79f3f480ecf5
-    vpc_id: vpc-0c6eb3aa23dcd5669
+    action: "create"
     env: "dev"
     instances:
      - mangodb
@@ -14,7 +14,6 @@
       amazon.aws.ec2_instance:
         instance_type: t3.micro
         image_id: "{{ ami_id }}"
-        vpc_security_group_ids: "{{ vpc_id }}"
         region: us-east-1
         security_groups: "{{ sg_id }}"
         name: "{{ item }}-{{ env }}"
