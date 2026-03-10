@@ -4,7 +4,6 @@
   vars:
     sg_id: sg-0d270e684cdd588ed
     ami_id: ami-0220d79f3f480ecf5
-    action: "create"
     env: "dev"
     instances:
      - mangodb
