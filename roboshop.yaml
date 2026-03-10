@@ -8,6 +8,7 @@
     env: "dev"
     instances:
      - mangodb
+     - catalogue
   tasks:
     - name: create ec2 instance
       amazon.aws.ec2_instance:
