@@ -4,7 +4,7 @@
   vars:
     sg_id: "sgr-0b65999c424eccac7"
     ami_id: "ami-0220d79f3f480ecf5"
-    environment: "dev"
+    env: "dev"
     instances:
      - mangodb
      - catalogue
@@ -15,15 +15,15 @@
         image_id: "{{ ami_id }}"
         region: us-east-1
         security_groups: "{{ sg_id }}"
-        name: "{{ item }}-{{ environment }}"
+        name: "{{ item }}-{{ env }}"
         tags:
           Project: "roboshop"
-          Environment: "{{ environment }}"
+          Environment: "{{ env }}"
           Component: "{{ item }}"
-          Name: "{{ item }}-{{ environment }}"
+          Name: "{{ item }}-{{ env }}"
       loop: "{{ instances }}"
       register: ec2_output
-      
+
     - name: print the ec2_output
       ansible.builtin.debug:
         msg: "{{ ec2_output }}"  
